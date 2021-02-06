@@ -1,13 +1,14 @@
+import { ButtonHTMLAttributes, DOMAttributes } from "react";
 import styled from "styled-components";
 import theme from "@constants/theme";
-
-type ButtonType = 'button' | 'submit' | 'reset'
 
 export interface ButtonProps {
   /** Text content inside the Button. */
   text: string;
+  /** Click event callback. */
+  onClick?: DOMAttributes<HTMLButtonElement>['onClick'];
   /** Type of Button. Default = `button`. */
-  type?: ButtonType;
+  type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
 }
 
 export const StyledButton = styled.button`
@@ -15,9 +16,9 @@ export const StyledButton = styled.button`
   padding: 1rem;
   width: 100%;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   color: white;
-  font-size: 20px;
+  font-size: 2rem;
   font-family: ${theme.font};
   background-color: ${theme.colours.primary};
   transition: all 0.3s ease;
@@ -28,6 +29,6 @@ export const StyledButton = styled.button`
   &:focus {
     outline: none;
     background-color: ${theme.colours.primaryDark};
-    box-shadow: 0px 0px 20px ${theme.colours.primaryDarker};
+    box-shadow: 0rem 0rem 2rem ${theme.colours.primaryDarker};
   }
 `;

@@ -4,13 +4,14 @@
     "module": "esnext",
     "target": "esnext",
     "moduleResolution": "node",
-    "jsx": "preserve",
+    "jsx": "react",
     "baseUrl": "./src",
     /* paths - import rewriting/resolving */
     "paths": {
       "@constants/*": ["./constants/*"],
       "@components/*": ["./components/*"],
-      "@pages/*": ["./pages/*"]
+      "@pages/*": ["./pages/*"],
+      "@typings/*": ["./typings/*"],
     },
     /* noEmit - Snowpack builds (emits) files, not tsc. */
     "noEmit": true,

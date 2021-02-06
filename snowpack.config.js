@@ -8,6 +8,7 @@ module.exports = {
     "@constants": "./src/constants",
     "@pages": "./src/pages",
     "@components": "./src/components",
+    "@typings": "./src/typings",
   },
   plugins: ["@snowpack/plugin-react-refresh", "@snowpack/plugin-typescript"],
   routes: [

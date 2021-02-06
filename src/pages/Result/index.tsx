@@ -1,6 +1,7 @@
 import React from "react";
 import { Params, Redirect } from "wouter";
 import { parse } from "query-string";
+import { SongSearchFormData } from "@typings/core";
 
 type ResultParams = {
   query: string;

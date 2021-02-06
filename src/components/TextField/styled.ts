@@ -26,13 +26,14 @@ export const TextFieldWrapper = styled.div<{
   focused: boolean;
 }>`
   position: relative;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   display: flex;
   width: 100%;
+  background-color: transparent;
   border: ${({ focused }) =>
     focused
       ? "0.2rem solid " + theme.colours.primary
-      : "0.1rem solid rgba(0, 0, 0, 0.6)"};
+      : "0.15rem solid rgba(0, 0, 0, 0.6)"};
 `;
 
 export const TextFieldLabel = styled.label<{
@@ -47,7 +48,7 @@ export const TextFieldLabel = styled.label<{
   font-size: ${({ focused, changed }) =>
     focused || changed ? "1.7rem" : "1.8rem"};
   background-color: ${({ focused, changed }) =>
-    focused || changed ? "white" : "none"};
+    focused || changed ? "white" : "initial"};
   color: ${({ focused }) => (focused ? theme.colours.primary : "initial")};
   padding: ${({ focused }) => (focused ? "0 2rem" : "0 1rem")};
   transform: ${({ focused, changed }) =>
