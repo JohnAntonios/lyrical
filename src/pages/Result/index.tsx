@@ -2,6 +2,8 @@ import React from "react";
 import { Params, Redirect } from "wouter";
 import { parse } from "query-string";
 import { SongSearchFormData } from "@typings/core";
+import Loader from "@components/Loader";
+import Heading from "@components/Heading";
 
 type ResultParams = {
   query: string;
@@ -19,9 +21,13 @@ const Result: React.FC<ResultProps> = ({ params }) => {
 
   return (
     <>
-      <h1>
-        Searching for: {search.track} by '{search.artist}'
-      </h1>
+      <Heading
+        tag="h6"
+        align="left"
+        margin={{ left: 2, right: 2 }}
+        text={`'${search.track}' - ${search.artist}`}
+      />
+      <Loader />
     </>
   );
 };
