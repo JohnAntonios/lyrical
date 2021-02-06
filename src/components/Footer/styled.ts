@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
   position: relative;
-  margin: 5rem;
+  margin: 3rem;
   text-align: center;
   font-size: ${theme.typography.small}rem;
   color: ${theme.colours.primary};

@@ -6,7 +6,7 @@ type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 export interface HeadingProps {
   /** Text content inside the Heading. */
   text: string;
-  /** Heading tag level. */
+  /** Heading tag level. E.g. `"h1"`. */
   tag: HeadingTag;
   /** Text alignment. Defaults to `left`. */
   align?: AlignSetting;

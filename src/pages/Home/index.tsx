@@ -10,8 +10,8 @@ import { Form, FormFieldWrapper } from "./styled";
 
 const Home: React.FC = () => {
   const { register, handleSubmit } = useForm<SongSearchFormData>();
-
   const [_, setLocation] = useLocation();
+
   const onSubmit = handleSubmit((data) => {
     setLocation(`/result/${stringify(data)}`);
   });
@@ -36,7 +36,9 @@ const Home: React.FC = () => {
             required
           />
         </FormFieldWrapper>
-        <Button text="Search" type="submit" />
+        <FormFieldWrapper>
+          <Button text="Search" type="submit" />
+        </FormFieldWrapper>
       </Form>
     </>
   );

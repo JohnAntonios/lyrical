@@ -11,7 +11,7 @@
       "@constants/*": ["./constants/*"],
       "@components/*": ["./components/*"],
       "@pages/*": ["./pages/*"],
-      "@typings/*": ["./typings/*"],
+      "@typings/*": ["./typings/*"]
     },
     /* noEmit - Snowpack builds (emits) files, not tsc. */
     "noEmit": true,

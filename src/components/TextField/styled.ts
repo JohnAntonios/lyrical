@@ -1,5 +1,5 @@
 import theme from "@constants/theme";
-import { RefObject } from "react";
+import { Ref, RefObject } from "react";
 import styled from "styled-components";
 
 export interface TextFieldProps {
@@ -11,11 +11,7 @@ export interface TextFieldProps {
   /** Text for the label. */
   labelText: string;
   /** React Ref for controlling component. */
-  inputRef?:
-    | RefObject<HTMLInputElement>
-    | ((instance: HTMLInputElement | null) => void)
-    | null
-    | undefined;
+  inputRef?: Ref<HTMLInputElement> | null;
   /** `required` html attribute. */
   required?: boolean;
   /** Pre-populated value */
