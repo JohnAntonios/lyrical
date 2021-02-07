@@ -4,14 +4,19 @@ import Result from "@pages/Result";
 import Home from "@pages/Home";
 import Footer from "@components/Footer";
 import GlobalStyle from "./GlobalStyle";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const App: React.FC = () => {
+  const queryClient = new QueryClient();
+
   return (
     <>
       <GlobalStyle />
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/result/:query" component={Result} />
+        <QueryClientProvider client={queryClient}>
+          <Route path="/result/:query" component={Result} />
+        </QueryClientProvider>
         <Route>Not Found</Route>
       </Switch>
       <Footer />

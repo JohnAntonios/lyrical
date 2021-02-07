@@ -23,10 +23,10 @@ export const StyledHeading = styled.h4<Partial<HeadingProps>>`
   ${({ margin }) => {
     if (margin) {
       return css`
-        ${margin.bottom && `margin-bottom: ${margin.bottom}rem;`}
-        ${margin.right && `margin-right: ${margin.right}rem;`}
-        ${margin.left && `margin-left: ${margin.left}rem;`}
-        ${margin.top && `margin-top: ${margin.top}rem;`}
+        ${!isNaN(margin.bottom || 0)  && `margin-bottom: ${margin.bottom}rem;`}
+        ${!isNaN(margin.right || 0) && `margin-right: ${margin.right}rem;`}
+        ${!isNaN(margin.left || 0) && `margin-left: ${margin.left}rem;`}
+        ${!isNaN(margin.top || 0) && `margin-top: ${margin.top}rem;`}
       `;
     }
   }}

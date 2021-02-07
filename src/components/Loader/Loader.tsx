@@ -1,12 +1,16 @@
 import React from "react";
 import { LoaderBar, LoaderWrapper } from "./styled";
 
-const Loader: React.FC = () => {
+interface LoaderProps {
+  isLoading: boolean;
+}
+
+const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
   return (
     <LoaderWrapper>
-      <LoaderBar delay={0} />
-      <LoaderBar delay={0.25} />
-      <LoaderBar delay={0.4} />
+      <LoaderBar isLoading={isLoading} delay={0} />
+      <LoaderBar isLoading={isLoading} delay={0.25} />
+      <LoaderBar isLoading={isLoading} delay={0.4} />
     </LoaderWrapper>
   );
 };
