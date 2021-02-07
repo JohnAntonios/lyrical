@@ -1,8 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/de1008d1-b90e-4ec5-b027-cb0bd6b106b1/deploy-status)](https://app.netlify.com/sites/lyrical-web/deploys)
 
 # lyrical
-
-A minimal Lyric searching website with a focus on best performance, practices and accessibility.
+A minimal lyric searching website with a focus on best performance, practices and accessibility.
 
 ## Lighthouse 🔦🏠 result
 
