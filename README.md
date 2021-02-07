@@ -11,7 +11,7 @@ A minimal Lyric searching website with a focus on best performance, practices an
 - [React](https://reactjs.org/)
 - [React Hook Form](https://react-hook-form.com/)
 - [React Query](https://react-query.tanstack.com/)
-- [Snowpack](https://react-query.tanstack.com/)
+- [Snowpack](https://www.snowpack.dev/)
 - [Styled Components](https://styled-components.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Wouter](https://github.com/molefrog/wouter#features)
