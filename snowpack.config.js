@@ -11,21 +11,10 @@ module.exports = {
     "@typings": "./src/typings",
   },
   plugins: ["@snowpack/plugin-react-refresh", "@snowpack/plugin-typescript"],
-  routes: [
-    /* Enable an SPA Fallback in development: */
-    {"match": "routes", "src": ".*", "dest": "/index.html"},
-  ],
+  routes: [{ match: "routes", src: ".*", dest: "/index.html" }],
   optimize: {
-    /* Example: Bundle your final build: */
-    // "bundle": true,
-  },
-  packageOptions: {
-    /* ... */
-  },
-  devOptions: {
-    /* ... */
-  },
-  buildOptions: {
-    /* ... */
+    bundle: true,
+    minify: true,
+    target: "es2018",
   },
 };

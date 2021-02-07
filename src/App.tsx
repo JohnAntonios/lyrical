@@ -1,10 +1,11 @@
 import React from "react";
 import { Route, Switch } from "wouter";
+import { QueryClient, QueryClientProvider } from "react-query";
 import Result from "@pages/Result";
 import Home from "@pages/Home";
 import Footer from "@components/Footer";
+import './style.css';
 import GlobalStyle from "./GlobalStyle";
-import { QueryClient, QueryClientProvider } from "react-query";
 
 const App: React.FC = () => {
   const queryClient = new QueryClient();

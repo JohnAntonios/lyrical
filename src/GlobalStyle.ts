@@ -7,7 +7,7 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: 'Manuale', sans-serif;
+    font-family: 'Manuale', serif, sans-serif;
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
