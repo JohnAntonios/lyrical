@@ -2,7 +2,7 @@
   "name": "lyrical",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "John Antonios <john.antonios@sydney.edu.au>",
+  "author": "John Antonios <antonios.john@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "snowpack dev",
