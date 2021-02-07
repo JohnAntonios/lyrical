@@ -45,7 +45,7 @@ export const TextFieldLabel = styled.label<{
     focused || changed ? "1.7rem" : "1.8rem"};
   background-color: ${({ focused, changed }) =>
     focused || changed ? "white" : "initial"};
-  color: ${({ focused }) => (focused ? theme.colours.primary : "initial")};
+  color: ${({ focused }) => (focused ? theme.colours.primary : theme.colours.text)};
   padding: ${({ focused }) => (focused ? "0 2rem" : "0 1rem")};
   transform: ${({ focused, changed }) =>
     focused || changed ? "translateY(-3rem) translateX(-2rem)" : "initial"};
