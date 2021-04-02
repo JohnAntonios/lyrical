@@ -3,11 +3,13 @@
 # lyrical - https://lyrical-web.netlify.app
 A minimal lyric searching website with a focus on best performance, practices and accessibility.
 
-## Lighthouse 🔦🏠 result
+## 🎨 Design System
 
-![The results](./lighthouse.png)
+Font - [Manuale](https://fonts.google.com/specimen/Manuale)
 
-## Packages 📚
+![lyrical design system](./lyrical_design_system.jpg)
+
+## 📚 Packages
 
 - [Axios](https://github.com/axios/axios#axios)
 - [Query String](https://github.com/sindresorhus/query-string#readme)
@@ -18,3 +20,8 @@ A minimal lyric searching website with a focus on best performance, practices an
 - [Styled Components](https://styled-components.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Wouter](https://github.com/molefrog/wouter#features)
+
+## 🔦🏠 Lighthouse result
+
+![The results](./lighthouse.png)
+
