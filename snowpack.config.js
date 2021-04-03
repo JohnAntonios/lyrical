@@ -5,10 +5,11 @@ module.exports = {
     src: { url: "/dist" },
   },
   alias: {
+    "$typings": "./src/typings/index.ts",
     "@constants": "./src/constants",
-    "@pages": "./src/pages",
     "@components": "./src/components",
-    "@typings": "./src/typings",
+    "@hooks": "./src/hooks",
+    "@pages": "./src/pages",
   },
   plugins: ["@snowpack/plugin-react-refresh", "@snowpack/plugin-typescript"],
   routes: [{ match: "routes", src: ".*", dest: "/index.html" }],

@@ -18,9 +18,15 @@ export interface TextFieldProps {
   populatedValue?: string;
 }
 
-export const TextFieldWrapper = styled.div<{
+interface TextFieldWrapperProps {
   focused: boolean;
-}>`
+}
+
+interface TextFieldLabelProps extends TextFieldWrapperProps {
+  changed: boolean;
+}
+
+export const TextFieldWrapper = styled.div<TextFieldWrapperProps>`
   position: relative;
   border-radius: 0.5rem;
   display: flex;
@@ -32,10 +38,7 @@ export const TextFieldWrapper = styled.div<{
       : "0.15rem solid rgba(0, 0, 0, 0.6)"};
 `;
 
-export const TextFieldLabel = styled.label<{
-  focused: boolean;
-  changed: boolean;
-}>`
+export const TextFieldLabel = styled.label<TextFieldLabelProps>`
   position: absolute;
   left: 1.2rem;
   top: 25%;
@@ -45,7 +48,8 @@ export const TextFieldLabel = styled.label<{
     focused || changed ? "1.7rem" : "1.8rem"};
   background-color: ${({ focused, changed }) =>
     focused || changed ? "white" : "initial"};
-  color: ${({ focused }) => (focused ? theme.colours.primary : theme.colours.text)};
+  color: ${({ focused }) =>
+    focused ? theme.colours.primary : theme.colours.text};
   padding: ${({ focused }) => (focused ? "0 2rem" : "0 1rem")};
   transform: ${({ focused, changed }) =>
     focused || changed ? "translateY(-3rem) translateX(-2rem)" : "initial"};

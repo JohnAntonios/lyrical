@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import theme from "@constants/theme";
 
 type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+type HeadingMarginPositions = "top" | "bottom" | "left" | "right";
 
 export interface HeadingProps {
   /** Text content inside the Heading. */
@@ -12,21 +13,24 @@ export interface HeadingProps {
   align?: AlignSetting;
   /** Any margin? In `rem` units. */
   margin?: {
-    top?: number;
-    bottom?: number;
-    left?: number;
-    right?: number;
+    [key in HeadingMarginPositions]?: number | "auto" | "none";
   };
 }
 
 export const StyledHeading = styled.h4<Partial<HeadingProps>>`
   ${({ margin }) => {
     if (margin) {
+      const cssMargins = Object.keys(margin).map((marginPosition) => {
+        const marginPositionValue =
+          margin[marginPosition as HeadingMarginPositions];
+
+        if (marginPositionValue) {
+          return `margin-${marginPosition}: ${marginPositionValue}rem;`;
+        }
+      });
+
       return css`
-        ${!isNaN(margin.bottom || 0)  && `margin-bottom: ${margin.bottom}rem;`}
-        ${!isNaN(margin.right || 0) && `margin-right: ${margin.right}rem;`}
-        ${!isNaN(margin.left || 0) && `margin-left: ${margin.left}rem;`}
-        ${!isNaN(margin.top || 0) && `margin-top: ${margin.top}rem;`}
+        ${cssMargins.join("\n")}
       `;
     }
   }}

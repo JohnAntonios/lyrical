@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Params, Redirect } from "wouter";
 import { parse } from "query-string";
-import { useQuery } from "react-query";
-import axios from "axios";
-import { Lyrical, SongSearchFormData } from "@typings/core";
+import { SongSearchFormData } from "$typings";
 import Loader from "@components/Loader";
 import Heading from "@components/Heading";
+import useQueryLyricsOVH from "@hooks/useQueryLyricsOVH";
 import { BackLink, Lyrics, TitleWrapper } from "./styled";
+import { useQueryClient } from "react-query";
 
 type ResultParams = {
   query: string;
@@ -21,33 +21,17 @@ const Result: React.FC<ResultProps> = ({ params }) => {
 
   const search = parse(params.query) as SongSearchFormData;
 
-  if (!params || !params.query || !search || !search.artist || !search.track)
+  if (!params.query || !search.artist || !search.track)
     return <Redirect to="/" />;
 
-  const { isLoading, error, data } = useQuery<Lyrical>(
-    "lyrical",
-    async () => {
-      try {
-        const res = await axios.get(
-          `https://api.lyrics.ovh/v1/${search.artist.replaceAll(
-            "&",
-            "and"
-          )}/${search.track.replaceAll("&", "and")}`
-        );
-        return res.data;
-      } catch (error) {
-        return error;
-      }
-    },
-    { cacheTime: 1 }
-  );
+  const { isLoading, error, data } = useQueryLyricsOVH(search);
 
   useEffect(() => {
     if (!isLoading) {
-      const t = setTimeout(() => {
+      const interval = setTimeout(() => {
         setHideLoader(true);
       }, 500);
-      return () => clearTimeout(t);
+      return () => clearTimeout(interval);
     }
   }, [isLoading]);
 
@@ -55,7 +39,7 @@ const Result: React.FC<ResultProps> = ({ params }) => {
 
   return (
     <div>
-      {isReady && data && data.lyrics && <BackLink to="/">Back to Search</BackLink>}
+      {isReady && <BackLink to="/">Back to Search</BackLink>}
       <TitleWrapper>
         <Heading
           tag="h6"
@@ -66,7 +50,7 @@ const Result: React.FC<ResultProps> = ({ params }) => {
       </TitleWrapper>
       {!hideLoader && <Loader isLoading={isLoading} />}
       {isReady && (
-        <Lyrics>{data && data.lyrics ? data.lyrics.trim() : "No lyrics found."}</Lyrics>
+        <Lyrics>{data ? data.lyrics.trim() : "No lyrics found."}</Lyrics>
       )}
       <BackLink to="/">Back to Search</BackLink>
     </div>

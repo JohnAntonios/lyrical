@@ -8,10 +8,11 @@
     "baseUrl": "./src",
     /* paths - import rewriting/resolving */
     "paths": {
+      "$typings": ["./typings/index.ts"],
       "@constants/*": ["./constants/*"],
       "@components/*": ["./components/*"],
+      "@hooks/*": ["./hooks/*"],
       "@pages/*": ["./pages/*"],
-      "@typings/*": ["./typings/*"]
     },
     /* noEmit - Snowpack builds (emits) files, not tsc. */
     "noEmit": true,
